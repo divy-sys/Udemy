@@ -1,4 +1,4 @@
-<h1>Create A New Article </h1>
+<h1>Edit A Article </h1>
 
 <% if @article.errors.any? %>
   <h3>Prevent from this following errors</h3>
@@ -9,7 +9,7 @@
   </ul>
   <% end %>
 
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+<%= form_with(model: @article, local: true) do |f| %>
 
   <p> <%= f.label :title  %> <br/>
    <%= f.text_field :title  %> 
@@ -23,6 +23,5 @@
     <%= f.submit  %>
   </p>
 <% end %>
-
 
 <%= link_to "Return to menu", articles_path  %>
